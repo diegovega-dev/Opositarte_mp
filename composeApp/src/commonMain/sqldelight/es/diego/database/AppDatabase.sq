@@ -1,0 +1,31 @@
+CREATE TABLE obra (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    autor TEXT NOT NULL,
+    siglo INTEGER NOT NULL,
+    estilo TEXT NOT NULL,
+    explicacion TEXT NOT NULL,
+    perspectiva TEXT NOT NULL,
+    tipo TEXT NOT NULL,
+    foto TEXT NOT NULL
+);
+
+selectAll:
+SELECT * FROM obra;
+
+selectByAutor:
+SELECT * FROM obra WHERE autor = ?;
+
+selectByEstilo:
+SELECT * FROM obra WHERE estilo = ?;
+
+deleteById:
+DELETE FROM obra WHERE id = ?;
+
+insertObra:
+INSERT INTO obra(nombre, autor, siglo, estilo, explicacion, perspectiva, tipo, foto)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+insertAll:
+INSERT OR REPLACE INTO obra(id, nombre, autor, siglo, estilo, explicacion, perspectiva, tipo, foto)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
